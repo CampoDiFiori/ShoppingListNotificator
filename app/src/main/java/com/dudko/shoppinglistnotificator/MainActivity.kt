@@ -37,11 +37,8 @@ class MainActivity : AppCompatActivity() {
         val filter = IntentFilter("com.dudko.ITEM_ADDED")
         registerReceiver(receiver, filter)
 
-
         val serviceIntent = Intent(this, NotificationService::class.java)
-        val lol = bindService(serviceIntent, mcom, Context.BIND_AUTO_CREATE)
-
-        println(lol)
+        bindService(serviceIntent, mcom, Context.BIND_AUTO_CREATE)
     }
 
     override fun onDestroy() {
